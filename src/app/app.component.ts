@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Calculator } from './calculator';
 
@@ -7,14 +7,14 @@ import { Calculator } from './calculator';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'ng-testing-services';
 
   ngOnInit() {
     const calculator = new Calculator();
     const rta = calculator.multiply(3, 3);
     console.log(rta === 9);
-    const rta2 = calculator.multiply(3, 0);
-    console.log(rta2 === 9);
+    const rta2 = calculator.divide(3, 0);
+    console.log(rta2 === null);
   }
 }
