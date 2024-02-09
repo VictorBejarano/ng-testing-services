@@ -7,16 +7,16 @@ import { PicoPreviewComponent } from './components/pico-preview/pico-preview.com
 const routes: Routes = [
   {
     path: 'products',
-    component: ProductsComponent,
+    component: ProductsComponent
   },
   {
     path: 'pico-preview',
-    component: PicoPreviewComponent,
-  },
+    component: PicoPreviewComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
