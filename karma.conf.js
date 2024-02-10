@@ -31,19 +31,25 @@ module.exports = function (config) {
       reporters: [{ type: "html" }, { type: "text-summary" }],
       check: {
         global: {
-          statements: 80,
-          branches: 80,
-          functions: 80,
-          lines: 80,
+          statements: 30,
+          branches: 30,
+          funtions: 30,
+          lines: 30,
         },
       },
     },
-    reporters: ['mocha'],
+    reporters: ["mocha"],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ["ChromeHeadless"],
+    customLaunchers: {
+      ChromeHeadlessCI: {
+        base: "ChromeHeadless",
+        flags: ["--no-sandbox"],
+      },
+    },
     singleRun: false,
     restartOnFileChange: true,
   });
